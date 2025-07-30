@@ -3,3 +3,6 @@ def factorial(n):
         return 1
     else:
         return n * factorial(n-1)
+    
+def suma(a, b):
+    return a + b
