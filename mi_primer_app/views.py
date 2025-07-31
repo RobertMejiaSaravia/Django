@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Familiar
+from .models import Familiar, Curso
+from .forms import CursoForm
 
 # Create your views here.
 
@@ -20,3 +21,7 @@ def crear_familiar(request, nombre):
 def listar_familiares(request):
     familiares = Familiar.objects.all()
     return render(request, 'mi_primer_app/listar-familiares.html', {'familiares': familiares})
+
+def crear_curso(request):
+    form = CursoForm()
+    return render(request, 'mi_primer_app/crear-curso.html', {'form':form})
